@@ -81,7 +81,10 @@ def fetch_product(id):
     product = Product.query.get(id)
     return product_schema.jsonify(product)    
 
-
+@app.route("/product/<id>", methods=['GET'])
+def fetch_products(id):
+    product = Product.query.get(id)
+    return product_schema.jsonify(product)
 
 
 # run our server
